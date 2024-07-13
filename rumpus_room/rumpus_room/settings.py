@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rumpus', # rumpus app
+    'storages', # django-storages / boto3
 ]
 
 MIDDLEWARE = [
@@ -121,7 +123,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+# STATIC_URL = 'static/'
+AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY')
+AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_KEY')
+AWS_STORAGE_BUCKET_NAME = config('AWS_BUCKET')
+AWS_LOCATION = config('AWS_PATH_TO_STATIC')
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
