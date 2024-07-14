@@ -19,6 +19,7 @@ from decouple import config
 # if not config_path.exists():
 #     raise Exception('No .env file found in the root directory. Please create one and add the necessary variables.')
 
+# check if all necessary env variables are present
 if not config('SECRET_KEY', default=None):
     raise Exception('SECRET_KEY env variable not found. Please add it.')
 elif not config('ALLOWED_HOSTS', default=None):

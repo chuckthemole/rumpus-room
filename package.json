@@ -35,7 +35,7 @@
         "lint": "echo Linting frontend",
         "test": "echo Testing frontend",
         "bulma-build": "node-sass --omit-source-map-url ./rumpus_room/rumpus/static/sass/rumpus-styles.scss ./rumpus_room/rumpus/static/css/rumpus-styles.css",
-        "bulma-build-watch": "npm run css-build -- --watch",
+        "bulma-build-watch": "npm run css-build -- --watch",    
         "bulma-watch": "npm run css-watch",
         "preinstall": "./config/dev/scripts/preinstall.sh",
         "postinstall": "./config/dev/scripts/postinstall.sh"

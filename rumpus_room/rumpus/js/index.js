@@ -49,6 +49,9 @@ const router = createBrowserRouter([
             //     // errorElement: <ErrorPage />
             // }
         ],
+
+        path: '/rumpus',
+        element: <App />,
     },
 ]);
 
