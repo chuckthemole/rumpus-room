@@ -4,7 +4,8 @@ export default function App() {
 
     return (
         <>
-            <div>
+            <div className="columns is-centered">
+                <div className="column"></div>
                 <h1>Chuck's Site</h1>
             </div>
         </>
