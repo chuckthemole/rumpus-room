@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rumpus', # rumpus app
     'storages', # django-storages / boto3
+    'rest_framework', # Django REST framework
 ]
 
 MIDDLEWARE = [
@@ -75,6 +76,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'rumpus_room.wsgi.application'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+}
 
 
 # Database
@@ -130,12 +137,15 @@ USE_TZ = True
 # Check the dev stage and set the static URL and root accordingly
 dev_stage = config('DEV_STAGE', default='DEV', cast=str)
 if dev_stage == 'DEV':
+    print('DEV_STAGE=DEV')
     STATIC_URL = '/static/'
     STATIC_ROOT = BASE_DIR / 'static'
 elif dev_stage == 'BETA':
     # TODO: Add beta stage settings
+    print('DEV_STAGE=BETA')
     pass
 elif dev_stage == 'LIVE':
+    print('DEV_STAGE=LIVE')
     AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY')
     AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_KEY')
     AWS_STORAGE_BUCKET_NAME = config('AWS_BUCKET')
