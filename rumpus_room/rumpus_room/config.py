@@ -1,6 +1,9 @@
 from decouple import config
 
 class RumpusConfig:
+    '''
+    Check if all necessary env variables are present
+    '''
     def __init__(self, env_file=None):
         self.check_env_variables()
         # self.check_env_file()

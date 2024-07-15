@@ -6,7 +6,7 @@ export default function App() {
         <>
             <div className="columns is-centered">
                 <div className="column"></div>
-                <h1>Chuck's Site</h1>
+                <h1>Who is Chuck's Site</h1>
             </div>
         </>
     )
