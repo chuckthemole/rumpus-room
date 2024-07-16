@@ -22,4 +22,5 @@ router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
+    path("forum_post", views.forum_post_api_overview, name="forum_post_api_overview")
 ]
