@@ -32,6 +32,31 @@ export default function ForumThread() {
         return <div>loading...</div>
     }
 
+    async function handleSubmit(e) {
+        e.preventDefault();
+        const forumPostId = e.target.id;
+        await onDelete(forumPostId);
+    }
+
+    async function onDelete(id) {
+        const requestOptions = {
+            method: 'DELETE',
+            redirect: "follow",
+            entity: id,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(id)
+        };
+        // return fetch('api/forum_posts/', requestOptions);
+        // fetch from the forum_posts api and print to console the response
+        console.log(requestOptions);
+        return fetch('api/forum_posts/', requestOptions)
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.log('error', error));
+	}
+
     if(data !== undefined && data !== null && data !== '') {
 
         return (
@@ -70,9 +95,11 @@ export default function ForumThread() {
                                     </div>
                                 </nav>
                             </div>
-                            <div className="media-right">
-                                <button className="delete"></button>
-                            </div>
+                            <form method='post' onSubmit={handleSubmit}>
+                                <div className="media-right">
+                                    <button className="delete"></button>
+                                </div>
+                            </form>
                         </article>
                     ))}
                 </div>
