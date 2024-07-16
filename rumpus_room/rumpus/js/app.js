@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Header from './header';
+import Footer from './footer';
 
 export default function App() {
 
@@ -11,7 +12,7 @@ export default function App() {
             </div> */}
 
             <Header />
-            
+
             <section className="hero is-medium">
                 <div className="hero-body has-text-centered">
                 <h1 className="title is-2">Thoughts, stories, and ideas.</h1>
@@ -215,29 +216,7 @@ export default function App() {
                 </section>
             </div>
 
-            <footer className="footer">
-                <div className="container">
-                <div className="content has-text-centered">
-                    <div className="links">
-
-                    <div className="level-item">
-                        <a href="https://www.bulma.io">Bulma</a>
-                    </div>
-                    <div className="level-item">
-                        <a href="https://bleedingedgepress.com/book_excerpts/FF9932/bulma.twochapters.pdf">Bulma Book</a>
-                    </div>
-                    <div className="level-item">
-                        <a href="https://www.perplexity.ai">Perplexity</a>
-                    </div>
-                    </div><br />
-                    <p>
-                    <a href="https://bulma.io">
-                        <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24" />
-                    </a>
-                    </p>
-                </div>
-                </div>
-            </footer>
+            <Footer />
             
         </>
     )
