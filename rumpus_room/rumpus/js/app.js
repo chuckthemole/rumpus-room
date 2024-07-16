@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Header from './header';
 import Footer from './footer';
+import Forum from './forum';
 
 export default function App() {
 
@@ -10,16 +11,9 @@ export default function App() {
 
             <section className="hero is-medium">
                 <div className="hero-body has-text-centered">
-                    <h1 className="title is-2">Thoughts, stories, and ideas.</h1>
+                    <h1 className="title is-2">Share stories, thoughts, ideas</h1>
                     <div id="hero-input-group" className="field has-addons has-addons-centered">
-                        <div className="control">
-                        <input className="input is-medium" type="text" placeholder="Search..." />
-                        </div>
-                        <div className="control">
-                        <a className="button is-medium is-primary">
-                            <i className="fal fa-search" />
-                        </a>
-                        </div>
+                        <Forum />
                     </div>
                 </div>
             </section>
