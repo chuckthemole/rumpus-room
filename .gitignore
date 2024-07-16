@@ -162,4 +162,8 @@ cython_debug/
 #.idea/
 
 node_modules/
-**/static/
+rumpus_room/static
+rumpus_room/rumpus/static/rumpus/css/*
+!rumpus_room/rumpus/static/rumpus/css/rumpus-styles.css
+rumpus_room/rumpus/static/rumpus/js/*
+rumpus_room/rumpus/static/rumpus/images/*

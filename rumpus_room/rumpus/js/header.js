@@ -15,7 +15,7 @@ export default function Header() {
 
     // Return the header
     return (
-        <nav className="navbar" role="navigation" aria-label="main navigation">
+        <nav className="navbar is-primary" role="navigation" aria-label="main navigation">
             <div className="container">
             <div className="navbar-brand">
                 <a className="navbar-item" href="/">

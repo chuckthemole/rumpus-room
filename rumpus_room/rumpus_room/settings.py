@@ -136,7 +136,10 @@ USE_TZ = True
 
 # Check the dev stage and set the static URL and root accordingly
 dev_stage = config('DEV_STAGE', default='DEV', cast=str)
+
 STATIC_URL = '/static/'
+# STATICFILES_DIRS = [BASE_DIR / 'rumpus/css'] # not needed right now
+
 if dev_stage == 'DEV':
     print('DEV_STAGE=DEV')
     STATIC_ROOT = BASE_DIR / 'static'
