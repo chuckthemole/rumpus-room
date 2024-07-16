@@ -1,6 +1,7 @@
 const React = require('react');
 const ReactDOM = require('react-dom/client');
 
+import CSRFToken from './csrftoken';
 import RumpusRoomQuill from './rumpus_room_quill';
 
 export default function Forum() {
@@ -22,15 +23,24 @@ export default function Forum() {
             method: 'POST',
             redirect: "follow",
             entity: forumPost,
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+            },
             body: JSON.stringify(forumPost)
         };
-        return fetch('/forum_post', requestOptions);
+        // return fetch('api/forum_posts/', requestOptions);
+        // fetch from the forum_posts api and print to console the response
+        console.log(requestOptions);
+        return fetch('api/forum_posts/', requestOptions)
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.log('error', error));
 	}
 
     return (
         <>
             <form method='post' onSubmit={handleSubmit} className="box">
+                <CSRFToken />
                 <div className='field'>{quill}</div>
                 <div className="field">
                     <button id="adminForumPostSubmit" type="submit" value="ForumPost" className="button is-success">
