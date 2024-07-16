@@ -22,5 +22,4 @@ router.register(r'users', UserViewSet)
 
 urlpatterns = [
     path("", include(router.urls)),
-    path("rumpus_room_brand", views.rumpus_room_brand, name="rumpus_room_brand"),
 ]

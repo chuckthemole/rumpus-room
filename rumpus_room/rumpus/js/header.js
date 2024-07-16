@@ -1,39 +1,25 @@
 import React from 'react';
+import { useEffect, useState } from 'react';
 import useSWR from 'swr';
 
-export const fetcher = async url => {
-    const res = await fetch(url)
-    // If the status code is not in the range 200-299,
-    // still try to parse and throw it.
-    if (!res.ok) {
-      const error = new Error('An error occurred while fetching the data.')
-      // Attach extra info to the error object.
-      error.info = await res.json()
-      error.status = res.status
-      throw error
-    }
-    return res.json()
-}
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
+/**
+ * This renders the header component
+ * 
+ * @returns Header component
+ */
 export default function Header() {
-    const {header_data, error} = useSWR(
-        '/static/',
-        fetcher
-    );
 
-    if (error) {
-        console.log('Error fetching header data');
-        console.log(error);
-    }
+    const path_to_navbar_brand = '/static/rumpus/images/default_brand.png';
 
-    console.log(header_data);
-
+    // Return the header
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className="container">
             <div className="navbar-brand">
-                <a className="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28" />
+                <a className="navbar-item" href="/">
+                <img src={path_to_navbar_brand} width="112" height="28" />
                 </a>
 
                 <a role="button" className="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">

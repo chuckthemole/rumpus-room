@@ -136,9 +136,9 @@ USE_TZ = True
 
 # Check the dev stage and set the static URL and root accordingly
 dev_stage = config('DEV_STAGE', default='DEV', cast=str)
+STATIC_URL = '/static/'
 if dev_stage == 'DEV':
     print('DEV_STAGE=DEV')
-    STATIC_URL = '/static/'
     STATIC_ROOT = BASE_DIR / 'static'
 elif dev_stage == 'BETA':
     # TODO: Add beta stage settings
@@ -155,7 +155,7 @@ elif dev_stage == 'LIVE':
         'CacheControl': 'max-age=86400',
     }
 
-    STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+    STATIC_ROOT = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Default primary key field type
