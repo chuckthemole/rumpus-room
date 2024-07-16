@@ -1,7 +1,6 @@
 const React = require('react');
 const ReactDOM = require('react-dom/client');
 
-import CSRFToken from './csrftoken';
 import RumpusRoomQuill from './rumpus_room_quill';
 
 export default function Forum() {
@@ -40,7 +39,6 @@ export default function Forum() {
     return (
         <>
             <form method='post' onSubmit={handleSubmit} className="box">
-                <CSRFToken />
                 <div className='field'>{quill}</div>
                 <div className="field">
                     <button id="adminForumPostSubmit" type="submit" value="ForumPost" className="button is-success">

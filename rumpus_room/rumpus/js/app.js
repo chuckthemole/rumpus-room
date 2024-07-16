@@ -2,6 +2,7 @@ import * as React from 'react';
 import Header from './header';
 import Footer from './footer';
 import Forum from './forum';
+import ForumThread from './forum_thread';
 
 export default function App() {
 
@@ -18,6 +19,30 @@ export default function App() {
                 </div>
             </section>
 
+            <div className="container is-max-desktop">
+                <section className="featured">
+                    <div className="level">
+                        <div className="level-left">
+                            <div className="level-item">
+                                <h2 className="subtitle">Shared posts...</h2>
+                            </div>
+                            <ForumThread />
+                        </div>
+                        <div className="level-right">
+                            <div className="level-item">
+                                <div className="field has-addons has-addons-centered">
+                                    <div className="control">
+                                        <a className="button is-small" disabled>
+                                            <i className="far fa-chevron-left" />
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+{/* 
             <div className="container is-max-desktop">
                 <section className="featured">
                 <div className="level">
@@ -203,7 +228,7 @@ export default function App() {
                     </div>
                 </div>
                 </section>
-            </div>
+            </div> */}
 
             <Footer />
             
