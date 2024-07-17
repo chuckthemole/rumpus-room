@@ -4,7 +4,7 @@
         rgba(255, 255, 255, 0.705),
         rgba(255, 255, 255, 0.301)
     ),
-    url(https://i.ibb.co/2PHHkRq/alexandra-nicolae-MKXy-Rm-p-K50-unsplash.jpg);
+    url('/static/rumpus/images/golden_gate_bikes.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
