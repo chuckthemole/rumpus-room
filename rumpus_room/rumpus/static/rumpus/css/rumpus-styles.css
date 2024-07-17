@@ -19,10 +19,17 @@
     width: 400px;
 }
 
+/* brand */
+.navbar-brand {
+    background: url('/static/rumpus/images/default_brand.png') no-repeat center center;
+    background-size: cover;
+    width: 152px;
+}
+
 /* footer */
 .footer {
     margin-top: 5rem;
-    background: white;
+    background: #9a9c88;
     border-top: 1px solid var(--primary);
 }
 .footer .links {

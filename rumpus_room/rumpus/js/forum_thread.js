@@ -1,6 +1,6 @@
 const React = require('react');
 import { useState } from 'react';
-import { faHeart, faReply, faRetweet } from '@fortawesome/free-solid-svg-icons';
+import { faBarcode, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useSWR from 'swr';
 import CSRFToken from './csrftoken';
@@ -69,9 +69,7 @@ export default function ForumThread() {
                     {data.map(( post, index ) => (
                         <article key={index} className="media m-4 box">
                             <figure className="media-left">
-                                <p className="image is-64x64">
-                                <img src="/static/rumpus/images/default_brand.png" />
-                                </p>
+                                <span className='icon is-small'><FontAwesomeIcon icon={faBarcode} /></span>
                             </figure>
                             <div className="media-content">
                                 <div className="content">

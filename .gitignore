@@ -167,3 +167,4 @@ rumpus_room/rumpus/static/rumpus/css/*
 !rumpus_room/rumpus/static/rumpus/css/rumpus-styles.css
 rumpus_room/rumpus/static/rumpus/js/*
 rumpus_room/rumpus/static/rumpus/images/*
+**/.DS_Store
