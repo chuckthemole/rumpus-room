@@ -1,5 +1,5 @@
 const React = require('react');
-const ReactDOM = require('react-dom/client');
+// const ReactDOM = require('react-dom/client');
 
 import RumpusRoomQuill from './rumpus_room_quill';
 
@@ -11,6 +11,7 @@ export default function Forum() {
 
     async function handleSubmit(e) {
         e.preventDefault();
+        console.log(value);
         const forumPost = {};
         forumPost['body'] = value;
         editor_ref.current.getEditor().setContents(''); // clear the editor

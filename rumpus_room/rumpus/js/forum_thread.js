@@ -1,7 +1,9 @@
 const React = require('react');
+import { useState } from 'react';
 import { faHeart, faReply, faRetweet } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useSWR from 'swr';
+import CSRFToken from './csrftoken';
 
 export const fetcher = async url => {
     const res = await fetch(url)
@@ -19,6 +21,8 @@ export const fetcher = async url => {
 
 export default function ForumThread() {
 
+    const [postId, setPostId] = useState(0);
+
     const {data, error, isLoading} = useSWR(
         '/api/forum_posts/',
         fetcher
@@ -34,27 +38,26 @@ export default function ForumThread() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        const forumPostId = e.target.id;
-        await onDelete(forumPostId);
+        console.log('id:');
+        console.log(postId);
+        if(postId !== 0) {
+            await onDelete(postId);
+        } else {
+            console.log('postId is 0');
+        }
     }
 
     async function onDelete(id) {
         const requestOptions = {
             method: 'DELETE',
             redirect: "follow",
-            entity: id,
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(id)
         };
-        // return fetch('api/forum_posts/', requestOptions);
-        // fetch from the forum_posts api and print to console the response
         console.log(requestOptions);
-        return fetch('api/forum_posts/', requestOptions)
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.log('error', error));
+        return fetch('api/forum_posts/' + id + '/', requestOptions);
 	}
 
     if(data !== undefined && data !== null && data !== '') {
@@ -95,9 +98,10 @@ export default function ForumThread() {
                                     </div>
                                 </nav>
                             </div>
-                            <form method='post' onSubmit={handleSubmit}>
+                            <form method='post' onSubmit={handleSubmit} >
+                                <CSRFToken />
                                 <div className="media-right">
-                                    <button className="delete"></button>
+                                    <button className="delete" onClick={() => setPostId(post.id)}></button>
                                 </div>
                             </form>
                         </article>
