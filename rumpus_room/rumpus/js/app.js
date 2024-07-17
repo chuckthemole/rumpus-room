@@ -23,18 +23,22 @@ export default function App() {
                 <section className="featured">
                     <div className="level">
                         <div className="level-left">
+
                             <div className="level-item">
-                                <h2 className="subtitle">Shared posts...</h2>
+                                <div className='columns'>
+                                    <div className='column is-full'>
+                                        <ForumThread />
+                                    </div>
+                                </div>
                             </div>
-                            <ForumThread />
                         </div>
                         <div className="level-right">
                             <div className="level-item">
                                 <div className="field has-addons has-addons-centered">
-                                    <div className="control">
-                                        <a className="button is-small" disabled>
-                                            <i className="far fa-chevron-left" />
-                                        </a>
+                                    <div>
+                                        <span>
+                                            ToDO: write instructions here!
+                                        </span>
                                     </div>
                                 </div>
                             </div>

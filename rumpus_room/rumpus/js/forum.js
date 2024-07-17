@@ -5,9 +5,19 @@ import RumpusRoomQuill from './rumpus_room_quill';
 
 export default function Forum() {
 
+    // override the default modules for the quill editor
+    const rumpus_room_modules = {
+        toolbar: [
+            [{ 'header': [1, 2, false] }],
+            ['bold', 'italic', 'underline','strike', 'blockquote'],
+            [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+            ['link']
+        ],
+    };
+
     const editor_ref = React.useRef(null);
     const [value, setValue] = React.useState('');
-    const [quill, setQuill] = React.useState(<RumpusRoomQuill value={value} setValue={setValue} editor_ref={editor_ref} />);
+    const [quill, setQuill] = React.useState(<RumpusRoomQuill modules={rumpus_room_modules} value={value} setValue={setValue} editor_ref={editor_ref} />);
 
     async function handleSubmit(e) {
         e.preventDefault();

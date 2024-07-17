@@ -25,7 +25,8 @@ export default function ForumThread() {
 
     const {data, error, isLoading} = useSWR(
         '/api/forum_posts/',
-        fetcher
+        fetcher,
+        { refreshInterval: 1000 }
     );
     if(error) {
         console.log(error);
@@ -66,7 +67,7 @@ export default function ForumThread() {
             <>
                 <div>
                     {data.map(( post, index ) => (
-                        <article key={index} className="media m-4">
+                        <article key={index} className="media m-4 box">
                             <figure className="media-left">
                                 <p className="image is-64x64">
                                 <img src="/static/rumpus/images/default_brand.png" />
@@ -84,16 +85,7 @@ export default function ForumThread() {
                                 <nav className="level is-mobile">
                                     <div className="level-left">
                                         <a className="level-item">
-                                        {/* <span className="icon is-small"><i className="fas fa-reply"></i></span> */}
-                                        <span className="icon is-small"><FontAwesomeIcon icon={faReply} color='blue' /></span>
-                                        </a>
-                                        <a className="level-item">
-                                        {/* <span className="icon is-small"><i className="fas fa-retweet"></i></span> */}
-                                        <span className="icon is-small"><FontAwesomeIcon icon={faRetweet} color='blue' /></span>
-                                        </a>
-                                        <a className="level-item">
-                                        {/* <span className="icon is-small"><i className="fas fa-heart"></i></span> */}
-                                        <span className="icon is-small"><FontAwesomeIcon icon={faHeart} color='red' /></span>
+                                            <span className="icon is-small"><FontAwesomeIcon icon={faHeart} color='red' /></span>
                                         </a>
                                     </div>
                                 </nav>
