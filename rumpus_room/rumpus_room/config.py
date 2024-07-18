@@ -40,3 +40,4 @@ class RumpusConfig:
             raise Exception('AWS_BUCKET env variable not found. Please add it.')
         elif not config('AWS_PATH_TO_STATIC', default=None):
             raise Exception('AWS_PATH_TO_STATIC env variable not found. Please add it.')
+        print('All necessary env variables found.')
