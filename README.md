@@ -1,6 +1,15 @@
 # Rumpus-Room / roulettech-take-home
 
-## Instructions
+## Written by: Charles Thomas
+
+## Application Features and Use
+- **User Interactions:** Users can create, view, like, and delete comments.
+
+## Tech Stack
+- **Database:** MySQL
+- **Backend:** Django
+- **Frontend:** React, Bulma
+- **Deployment:** AWS EC2, AWS RDS (MySQL), AWS S3
 
 ## Using Webpack for Bundling and Compiling the Frontend
 
@@ -29,3 +38,5 @@ Rumpus-Room leverages Webpack to streamline the development and deployment of ou
       ```bash
       npm run build
       ```
+
+## Future Work
