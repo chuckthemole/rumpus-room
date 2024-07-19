@@ -24,9 +24,31 @@ export default function Forum() {
         console.log(value);
         const forumPost = {};
         forumPost['body'] = value;
+        forumPost['like'] = await onCreateLike().then(data => {return data.id;});
         editor_ref.current.getEditor().setContents(''); // clear the editor
         await onCreate(forumPost);
     }
+
+    async function onCreateLike() {
+        const like = {};
+        like['count'] = 0;
+        const requestOptions = {
+            method: 'POST',
+            redirect: "follow",
+            entity: like,
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(like)
+        };
+        // return fetch('api/forum_posts/', requestOptions);
+        // fetch from the forum_posts api and print to console the response
+        console.log(requestOptions);
+        return fetch('api/likes/', requestOptions)
+            .then(response => response.json())
+            .then(data => {console.log(data); return data;})
+            .catch(error => console.log('error', error));
+	}
 
     async function onCreate(forumPost) {
         const requestOptions = {

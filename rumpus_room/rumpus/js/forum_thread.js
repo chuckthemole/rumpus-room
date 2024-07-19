@@ -4,6 +4,7 @@ import { faBarcode, faHeart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useSWR from 'swr';
 import CSRFToken from './csrftoken';
+import Like from './like';
 
 export const fetcher = async url => {
     const res = await fetch(url)
@@ -82,9 +83,10 @@ export default function ForumThread() {
                                 </div>
                                 <nav className="level is-mobile">
                                     <div className="level-left">
-                                        <a className="level-item">
+                                        {/* <a className="level-item">
                                             <span className="icon is-small"><FontAwesomeIcon icon={faHeart} color='red' /></span>
-                                        </a>
+                                        </a> */}
+                                        <Like like_id={post.like} />
                                     </div>
                                 </nav>
                             </div>
