@@ -9,12 +9,12 @@ export default function Footer() {
             <div className="container">
                 <div className="content has-text-centered">
                     <div className="links">
-                        <div className="level-item">
+                        {/* <div className="level-item">
                             <a href="/">About</a>
                         </div>
                         <div className="level-item">
                             <a href="/">Author</a>
-                        </div>
+                        </div> */}
                         <div className="level-item">
                             <a target="_blank" href="https://github.com/chuckthemole/roulettech-take-home">
                                 <span className="icon is-small">Github</span>

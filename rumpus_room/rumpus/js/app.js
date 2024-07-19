@@ -61,7 +61,9 @@ export default function App() {
                                 <div className="field has-addons has-addons-centered">
                                     <div>
                                         <span>
-                                            ToDO: write instructions here!
+                                            The picture above is a memorable ride across the Golden Gate Bridge.<br />The image features our bikes against the backdrop of the bridge.<br />
+                                            The bridge’s towering orange-red cables frame our adventure, <br />highlighting the beauty and excitement of cycling through one of the world's most famous landmarks.<br />
+                                            It’s a reminder of the joy we experienced on this unforgettable ride.<br />Share a story of your own!
                                         </span>
                                     </div>
                                 </div>

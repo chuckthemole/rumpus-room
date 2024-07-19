@@ -51,7 +51,11 @@ export default function AboutModal() {
             >
                 <div className="modal-content box">
                     <span>
-                        Hello What the fuck?
+                    This application is a dynamic platform that allows users to engage with content through comments.
+                    With a user-friendly interface built using React, users can create new comments, view comments from others, and delete any comments they no longer wish to keep.
+                    Additionally, the application supports liking comments, fostering interaction and feedback within the community.
+                    The robust backend, powered by Django and MySQL, ensures smooth performance and reliable management of all user activities.
+                    Whether you're sharing thoughts or interacting with others, this application makes commenting and engagement intuitive and efficient.
                     </span>
                 </div>
             </Modal>

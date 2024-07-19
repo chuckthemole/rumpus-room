@@ -51,7 +51,9 @@ export default function AuthorModal() {
             >
                 <div className="modal-content box">
                     <span>
-                        Hello What the fuck?
+                    My name is Charles Thomas and I am a Software Developer based in Oakland, California. 
+                    My most recent experience is being a part of Callisto Media as a Software Engineer. 
+                    I am a graduate of Mills College earning a master's degree in Computer Science.
                     </span>
                 </div>
             </Modal>
