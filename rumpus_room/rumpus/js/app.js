@@ -57,7 +57,7 @@ export default function App() {
                             </div>
                         </div>
                         <div className="level-right">
-                            <div className="level-item">
+                            <div className="level-item had-text-centered">
                                 <div className="field has-addons has-addons-centered">
                                     <div>
                                         <span>

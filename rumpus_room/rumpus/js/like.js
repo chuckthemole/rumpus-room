@@ -33,7 +33,7 @@ export default function Like({like_id}) {
     }
 
     if(!data) {
-        console.log('loading likes');
+        // console.log('loading likes');
         return <div>loading...</div>
     }
 

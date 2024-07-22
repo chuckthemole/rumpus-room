@@ -3,6 +3,9 @@ import React from 'react';
 export default function CSRFToken() {
 
     var csrftoken = getCookie('csrftoken');
+    if(csrftoken === null) {
+        csrftoken = '';
+    }
 
     // can put this in a common helper location later
     function getCookie(name) {

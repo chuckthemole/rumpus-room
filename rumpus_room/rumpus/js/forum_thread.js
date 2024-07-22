@@ -34,7 +34,7 @@ export default function ForumThread() {
         return <div>failed to load</div>
     }
     if(!data) {
-        console.log('loading forum posts');
+        // console.log('loading forum posts');
         return <div>loading...</div>
     }
 
@@ -74,12 +74,12 @@ export default function ForumThread() {
                             </figure>
                             <div className="media-content">
                                 <div className="content">
-                                    <p>
+                                    <div>
                                         <br />
                                         <small>Post id: <strong>{post.id}</strong></small> <small>Post time: <strong>{post.date}</strong></small>
                                         <br />
-                                        <div className='box' dangerouslySetInnerHTML={{ __html: post.body }} />
-                                    </p>
+                                        <p className='box' dangerouslySetInnerHTML={{ __html: post.body }} />
+                                    </div>
                                 </div>
                                 <nav className="level is-mobile">
                                     <div className="level-left">
