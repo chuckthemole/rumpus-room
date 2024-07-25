@@ -75,7 +75,7 @@ export default function ForumThread() {
 
         return (
             <>
-                <div>
+                <div className='column is-full'>
                     {data.map(( post, index ) => (
                         <article key={index} className="media m-4 box">
                             <figure className="media-left">

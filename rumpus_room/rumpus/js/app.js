@@ -70,17 +70,17 @@ export default function App() {
 
             <div className="container is-max-desktop">
                 <section>
-                    <div className="columns" style={level_style}>
-                        <div className="column" style={level_left_style}>
-                            <ForumThread />
-                        </div>
-                        <div className="column" style={level_right_style}>
+                    <div className="columns" style={level_right_style}>
+                        <div className='column is-full'>
                             <span>
                                 The picture above is a memorable ride across the Golden Gate Bridge. The image features our bikes against the backdrop of the bridge. 
                                 The bridge’s towering orange-red cables frame our adventure, highlighting the beauty and excitement of cycling through one of the world's  most famous landmarks. 
                                 It’s a reminder of the joy we experienced on this unforgettable ride. Share a story of your own!
                             </span>
                         </div>
+                    </div>
+                    <div className="columns" style={level_left_style}>
+                        <ForumThread />
                     </div>
                 </section>
             </div>
