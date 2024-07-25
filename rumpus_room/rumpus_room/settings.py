@@ -165,7 +165,14 @@ elif dev_stage == 'LIVE':
         'CacheControl': 'max-age=86400',
     }
 
-    STATIC_ROOT = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+    # AWS S3 settings. Use cloudfront if USE_CLOUDFRONT is set to True or use S3 directly
+    if config('USE_CLOUDFRONT', default=False, cast=bool):
+        print('Using Cloudfront')
+        CLOUDFRONT_DOMAIN = config('CLOUDFRONT_DOMAIN')
+        STATIC_ROOT = 'https://%s/' % (CLOUDFRONT_DOMAIN)
+    else:
+        print('Using S3')
+        STATIC_ROOT = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
     STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Default primary key field type

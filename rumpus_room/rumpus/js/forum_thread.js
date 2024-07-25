@@ -24,11 +24,13 @@ export default function ForumThread() {
 
     const [postId, setPostId] = useState(0);
 
-    const {data, error, isLoading} = useSWR(
+    const {data, error, isLoading} = useSWR( // fetch forum posts
         '/api/forum_posts/',
         fetcher,
         { refreshInterval: 1000 }
     );
+
+    // Error handling
     if(error) {
         console.log(error);
         return <div>failed to load</div>
@@ -38,6 +40,7 @@ export default function ForumThread() {
         return <div>loading...</div>
     }
 
+    // handle delete post
     async function handleSubmit(e) {
         e.preventDefault();
         console.log('id:');
@@ -48,7 +51,6 @@ export default function ForumThread() {
             console.log('postId is 0');
         }
     }
-
     async function onDelete(id) {
         const requestOptions = {
             method: 'DELETE',
@@ -62,7 +64,14 @@ export default function ForumThread() {
         return fetch('api/forum_posts/' + id + '/', requestOptions);
 	}
 
+    // if data is not empty then display the forum posts
     if(data !== undefined && data !== null && data !== '') {
+
+        // change the date format to a more readable format
+        data.map(( post ) => {
+            post.date = new Date(post.date).toLocaleString();
+            return post;
+        });
 
         return (
             <>
