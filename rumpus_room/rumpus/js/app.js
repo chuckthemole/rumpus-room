@@ -30,6 +30,31 @@ export default function App() {
         backgroundSize: 'cover'
     };
 
+    // .level {
+    //     display: flex;
+    //     align-items: flex-start; /* Align items at the top */
+    // }
+    // create a level style like the css above
+    const level_style = {
+        display: 'flex',
+        alignItems: 'flex-start'
+    };
+    // .level-left {
+    //     margin-right: 20px; /* Adjust this value as needed */
+    // }
+    
+    // .level-right {
+    //     margin-left: 20px; /* Adjust this value as needed */
+    // }
+    // create a level-left style like the css above
+    const level_left_style = {
+        marginRight: '20px'
+    };
+    // create a level-right style like the css above
+    const level_right_style = {
+        marginLeft: '20px'
+    };
+
     return (
         <>
             <Header />
@@ -44,30 +69,17 @@ export default function App() {
             </section>
 
             <div className="container is-max-desktop">
-                <section className="featured">
-                    <div className="level">
-                        <div className="level-left">
-
-                            <div className="level-item">
-                                <div className='columns'>
-                                    <div className='column is-full'>
-                                        <ForumThread />
-                                    </div>
-                                </div>
-                            </div>
+                <section>
+                    <div className="columns" style={level_style}>
+                        <div className="column" style={level_left_style}>
+                            <ForumThread />
                         </div>
-                        <div className="level-right">
-                            <div className="level-item had-text-centered">
-                                <div className="field has-addons has-addons-centered">
-                                    <div>
-                                        <span>
-                                            The picture above is a memorable ride across the Golden Gate Bridge.<br />The image features our bikes against the backdrop of the bridge.<br />
-                                            The bridge’s towering orange-red cables frame our adventure, <br />highlighting the beauty and excitement of cycling through one of the world's most famous landmarks.<br />
-                                            It’s a reminder of the joy we experienced on this unforgettable ride.<br />Share a story of your own!
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="column" style={level_right_style}>
+                            <span>
+                                The picture above is a memorable ride across the Golden Gate Bridge. The image features our bikes against the backdrop of the bridge. 
+                                The bridge’s towering orange-red cables frame our adventure, highlighting the beauty and excitement of cycling through one of the world's  most famous landmarks. 
+                                It’s a reminder of the joy we experienced on this unforgettable ride. Share a story of your own!
+                            </span>
                         </div>
                     </div>
                 </section>
