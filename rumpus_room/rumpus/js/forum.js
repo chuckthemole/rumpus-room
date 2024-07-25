@@ -21,7 +21,7 @@ export default function Forum() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        console.log(value);
+        // console.log(value);
         const forumPost = {};
         forumPost['body'] = value;
         forumPost['like'] = await onCreateLike().then(data => {return data.id;});
@@ -43,10 +43,10 @@ export default function Forum() {
         };
         // return fetch('api/forum_posts/', requestOptions);
         // fetch from the forum_posts api and print to console the response
-        console.log(requestOptions);
+        // console.log(requestOptions);
         return fetch('api/likes/', requestOptions)
             .then(response => response.json())
-            .then(data => {console.log(data); return data;})
+            .then(data => {return data;})
             .catch(error => console.log('error', error));
 	}
 
@@ -62,7 +62,7 @@ export default function Forum() {
         };
         // return fetch('api/forum_posts/', requestOptions);
         // fetch from the forum_posts api and print to console the response
-        console.log(requestOptions);
+        // console.log(requestOptions);
         return fetch('api/forum_posts/', requestOptions)
             .then(response => response.json())
             .then(data => console.log(data))

@@ -43,8 +43,8 @@ export default function ForumThread() {
     // handle delete post
     async function handleSubmit(e) {
         e.preventDefault();
-        console.log('id:');
-        console.log(postId);
+        // console.log('id:');
+        // console.log(postId);
         if(postId !== 0) {
             await onDelete(postId);
         } else {
@@ -60,7 +60,7 @@ export default function ForumThread() {
             },
             body: JSON.stringify(id)
         };
-        console.log(requestOptions);
+        // console.log(requestOptions);
         return fetch('api/forum_posts/' + id + '/', requestOptions);
 	}
 
