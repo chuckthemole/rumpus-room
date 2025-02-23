@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import pymysql
+
+# Set the default database adapter to pymysql
+pymysql.install_as_MySQLdb()
 
 # check if all necessary env variables are present using the RumpusConfig class
 from rumpus_room.config import RumpusConfig
@@ -149,13 +153,16 @@ STATIC_URL = '/static/'
 
 if dev_stage == 'DEV':
     print('DEV_STAGE=DEV')
+    print('* * * Did you mean to set DEV_STAGE to BETA or LIVE? * * *')
     STATIC_ROOT = BASE_DIR / 'static'
 elif dev_stage == 'BETA':
     # TODO: Add beta stage settings
     print('DEV_STAGE=BETA')
+    print('BETA stage settings not implemented yet')
     pass
 elif dev_stage == 'LIVE':
     print('DEV_STAGE=LIVE')
+    print('* * * Did you mean to set DEV_STAGE to BETA or DEV? * * *')
     AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY')
     AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_KEY')
     AWS_STORAGE_BUCKET_NAME = config('AWS_BUCKET')
