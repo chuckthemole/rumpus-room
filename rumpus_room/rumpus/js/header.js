@@ -16,7 +16,8 @@ export default function Header() {
     Modal.setAppElement('#root');
 
     // path to navbar brand
-    const path_to_navbar_brand = '/static/rumpus/images/default_brand.png';
+    // const path_to_navbar_brand = '/static/rumpus/images/default_brand.png';
+    const path_to_navbar_brand = 'https://rumpus.s3.amazonaws.com/roulettech/static/rumpus/images/default_brand.png'; // TODO: need to protect this. it's a security risk.
     const navbar_brand_background_style = { // style for navbar brand using path_to_navbar_brand
         background: `url(${path_to_navbar_brand}) no-repeat center center`,
         backgroundSize: 'cover',

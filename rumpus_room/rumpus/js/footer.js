@@ -3,7 +3,8 @@ import { SocialIcon } from 'react-social-icons'
 
 export default function Footer() {
 
-    const path_to_navbar_brand = '/static/rumpus/images/default_brand.png';
+    // const path_to_navbar_brand = '/static/rumpus/images/default_brand.png';
+    const path_to_navbar_brand = 'https://rumpus.s3.amazonaws.com/roulettech/static/rumpus/images/default_brand.png'; // TODO: need to protect this. it's a security risk.
     const github_icon = <SocialIcon url='https://github.com/chuckthemole/roulettech-take-home' />;
     const linkedin_icon = <SocialIcon url='https://www.linkedin.com/in/chuckthemole' />;
 

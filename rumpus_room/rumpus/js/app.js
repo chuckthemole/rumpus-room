@@ -6,7 +6,8 @@ import ForumThread from './forum_thread';
 
 export default function App() {
 
-    const path_to_hero_background = '/static/rumpus/images/golden_gate_bikes.jpg';
+    // const path_to_hero_background = '/static/rumpus/images/golden_gate_bikes.jpg';
+    const path_to_hero_background = 'https://rumpus.s3.amazonaws.com/roulettech/static/rumpus/images/golden_gate_bikes.jpg'
     // .hero {
     //     background: linear-gradient(
     //         rgba(255, 255, 255, 0.705),
