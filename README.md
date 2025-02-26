@@ -1,4 +1,4 @@
-# Rumpus-Room / roulettech-take-home
+# Rumpus-Room
 
 ## Written by: Charles Thomas
 
